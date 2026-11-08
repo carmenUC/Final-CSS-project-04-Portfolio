@@ -1,0 +1,33 @@
+main {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.languages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 50px 10px 50px 10px;
+
+    &__title {
+        text-transform: uppercase;
+        display:block;
+        text-align: center;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: -1px;
+    }
+
+    &__content {
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px;
+    }
+}

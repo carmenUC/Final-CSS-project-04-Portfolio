@@ -1,0 +1,75 @@
+.header {
+    background-image: 
+    url(/img/portrait.svg),
+    url(/img/oval.svg),
+    url(/img/oval.svg),
+    url(/img/oval.svg),
+    url(/img/oval.svg),
+    url(/img/oval.svg),
+    url(/img/halfoval.svg);
+
+    background-repeat: no-repeat;
+
+    background-position:
+    105px 141px,
+    0px 124px,
+    0px 136px,
+    0px 149px,
+    0px 161px,
+    0px 1173px,
+    311px 254px;
+    background-size: 
+    174px 242px,
+    180px,
+    180px,
+    180px,
+    180px,
+    180px,
+    65px;
+
+    &__logo {
+        margin-top: 20px;
+        text-align: center;
+        
+    }
+
+    &__social {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    &__hero {
+        margin: 350px 16px 40px 16px;
+        
+
+        &--title {
+            font-size: 40px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        &--content {
+            font-size: 16px;
+            text-align: center;
+            font-weight: 500;
+            line-height: 26px;
+            margin-bottom: 28px;
+        }
+
+        &--btn {
+            @include reset-link();
+            margin-bottom: 100px;
+
+        }
+    }
+
+    &__highlight {
+        text-decoration: underline 4px $green;
+        text-underline-offset: 9px;
+
+    }
+}
+

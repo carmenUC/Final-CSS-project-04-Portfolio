@@ -1,11 +1,40 @@
-html {
-    font-family: $poppins;
-    padding-top: 33px;
-}
+body {
+    font-family: "Space Grotesk";
+    color: white;
+    background-color: black;
+    z-index: -1;
+    position: relative;
 
-.container {
-    padding-left: 100px;
-    padding-right: 100px;
+     &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background-image: 
+            url(/img/oval.svg),
+            url(/img/oval.svg),
+            url(/img/oval.svg),
+            url(/img/oval.svg),
+            url(/img/oval.svg);
+
+        background-repeat: no-repeat;
+
+        background-position:
+            0px 1335px,
+            0px 1347px,
+            0px 1360px,
+            0px 1372px,
+            0px 138 4px;
+
+        background-size:
+            180px,
+            180px,
+            180px,
+            180px,
+            180px;
+
+        transform: scaleX(-1);
+    }   
 }
 
 ul {

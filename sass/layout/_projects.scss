@@ -1,0 +1,55 @@
+.projects {
+    padding-bottom: 30px;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1px;
+        margin-top: 70px;
+    }
+    &__title {
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 40px; /* 100% */
+        letter-spacing: -1.136px
+    }
+
+    &__btn {
+        @include reset-link();
+            
+    }
+
+    &__caption {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    &__hashtags {
+        color: $grey;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 28px;
+        margin-bottom: 25px;
+        font-feature-settings:'liga' off,'clig' off;
+    }
+
+    &__btn {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 60px;
+        gap: 20px;
+        &--viewpr{
+            @include reset-link();
+        }
+        &--viewcode{
+            @include reset-link();
+        }
+       
+
+    }
+}
