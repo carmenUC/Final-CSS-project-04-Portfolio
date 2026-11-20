@@ -1,4 +1,7 @@
 .footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 60px;
     background-color: #242424;
     padding-left: 15px;
@@ -19,6 +22,16 @@
     0px 465px,
     0px 477px,
     0px 489px;
+
+    @include breakpoint(tablet) {
+        background-position: 
+        0px 550px,
+        0px 562px,
+        0px 575px,
+        0px 587px,
+        0px 599px;
+        
+    }
     
     background-size: 
     180px,
@@ -27,10 +40,31 @@
     180px,
     180px;
 
-    &__form {
-        margin-bottom: 100px;
-        
+    @include breakpoint(desktopxl) {
+        background-image: 
+        url(/img/oval__xl.svg),
+        url(/img/oval__xl.svg),
+        url(/img/oval__xl.svg),
+        url(/img/oval__xl.svg),
+        url(/img/oval__xl.svg);
+
+        background-repeat: no-repeat;
+
+        background-position:
+        0px 420px,
+        0px 432px,
+        0px 445px,
+        0px 457px,
+        0px 469px;
+    
+        background-size: 
+        340px,
+        340px,
+        340px,
+        340px,
+        340px;
     }
+
 
     &__title {
         text-align: center;
@@ -41,9 +75,22 @@
         line-height: 40px; 
         letter-spacing: -1.136px;
         margin-bottom: 20px;
+        @include breakpoint(tablet) {
+            font-size: 72px;
+            line-height: 72px;
+            margin-bottom: 20px;
+            letter-spacing: -2.045px;
+        }
 
-        
+        @include breakpoint(desktopxl) {
+            font-size: 88px;
+            line-height: 88px;
+            margin-bottom: 36px;
+            letter-spacing: -2.5px;
+            text-align: left;
+        }
     }
+
    &__content {
         display: flex;
         text-align: center;
@@ -54,9 +101,58 @@
         line-height: 26px;
         letter-spacing: 0.222px;
         margin-bottom: 15px;
+
+        @include breakpoint(tablet) {
+            width: 445px;
+            font-size: 18px;
+            line-height: 28px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @include breakpoint(desktopxl) {
+            text-align: left;
+
    }
+}
    
-   &__form{
+   &__contact{
+    margin-bottom: 60px;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include breakpoint(desktopxl) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 200px;
+
+        width: 100%;
+        box-sizing: border-box;
+        padding: 84px 150px;
+        margin-bottom: 0px;        
+
+    }
+}
+    
+    &__form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+
+        @include breakpoint(tablet) {
+            width: 445px;
+            margin-left: auto;
+            margin-right: auto;;
+        }
+
+        @include breakpoint(desktopxl) {
+            width: 445px;
+            align-items: flex-start;
+        }
+    
     input,
     textarea {
         display: block;
@@ -65,60 +161,130 @@
         border: none;
         border-bottom: 2px solid white;
         outline: none;
+        box-sizing: border-box;
+
+        font-family: "Space Grotesk";
+        font-size: 20px;
+        color: white;
     }
 
     textarea {
         height: 100px;
         resize: none;
+        width: 343px;
+
+        @include breakpoint(tablet) {
+            width: 445px;
+        }
     }
     
 
         &--name{
-        font-family: "Space Grotesk";
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 26px; /* 162.5% */
-        letter-spacing: -0.222px;
-        text-transform: uppercase;
-        opacity: 0.5;
-        margin-top: 30px;
-        }
+            font-family: "Space Grotesk";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 26px; /* 162.5% */
+            letter-spacing: -0.222px;
+            text-transform: uppercase;
+            opacity: 0.5;
+            margin-top: 30px;
+            }
 
-    &--email {
-        font-family: "Space Grotesk";
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 26px; /* 162.5% */
-        letter-spacing: -0.222px;
-        text-transform: uppercase;
-        opacity: 0.5;
-        margin-top: 30px;
-   }
-    &--message {
-        font-family: "Space Grotesk";
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 26px; /* 162.5% */
-        letter-spacing: -0.222px;
-        text-transform: uppercase;
-        opacity: 0.5;  
-        margin-top: 30px; 
-    }
+        &--email {
+            font-family: "Space Grotesk";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 26px; /* 162.5% */
+            letter-spacing: -0.222px;
+            text-transform: uppercase;
+            opacity: 0.5;
+            margin-top: 30px;
 
-   &--submit {
-        margin-top: 30px;
-        margin-left: auto;
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 30px;
-        gap: 20px;
-        @include reset-button();
+
+            position: relative;
+
+
+        input {
+    &:user-invalid {
+        border-bottom-color: #f62307;
+        ~ .email-error-icon,
+        ~ .email-error-message {
+            display: block;
+
         }
     }
+}
 
+    .email-error-icon,
+    .email-error-message {
+        display: none;
+        color: #f52003;
+    }
+
+    .email-error-icon {
+        position: absolute;
+        right: 0;
+        bottom: 45px;
+        width: 30px;
+        height: 30px;
+        border: 2px solid #f32004;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 24px;
+    }
+
+    .email-error-message {
+        margin-top: 5px;
+        font-size: 20px;
+        text-align: right;
+        text-transform: none;
+    }
+
+    }
+        &--message {
+            font-family: "Space Grotesk";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 26px; /* 162.5% */
+            letter-spacing: -0.222px;
+            text-transform: uppercase;
+            opacity: 0.5;  
+            margin-top: 30px; 
+        }
+
+        &--submit {
+            margin-top: 30px;
+            margin-left: auto;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 30px;
+            gap: 20px;
+            @include reset-button();
+            @include active-link();
+            }
+        }
+   
+
+    &__endbar {
+        width: 100%;
+        @include breakpoint(tablet) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 30px 40px 30px;
+            box-sizing: border-box;
+
+            background-image: linear-gradient(#E6E6E6, #E6E6E6);
+            background-repeat: no-repeat;
+            background-size: calc(100% - 30px) 2px;
+            background-position: center top;
+
+        }
+    }
+    
     &__logo{
         border-top: 1px solid white;
         padding-top: 50px;
@@ -126,6 +292,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include breakpoint(tablet) {
+            border-top: none;
+            padding: 0;
+            a {
+                svg {
+                    width: 150px;
+                    height: auto;
+                }
+            }
+        }
     }
 
     &__social {
@@ -134,5 +310,18 @@
         align-items: center;
         gap: 20px;
         padding-bottom: 50px;
+        @include breakpoint(tablet) {
+            padding: 0;
+            gap: 30px;
+            a {
+                svg {
+                    width: 25px;
+                    height: auto;
+                }
+            }
+
+        }
+
+
     }
 }

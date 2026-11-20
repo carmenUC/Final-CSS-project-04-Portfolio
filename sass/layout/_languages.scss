@@ -3,6 +3,7 @@ main {
     padding-right: 16px;
 }
 .languages {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,9 +12,70 @@ main {
     border-top: 1px solid #E6E6E6;
     border-bottom: 1px solid #E6E6E6;
     padding: 50px 10px 50px 10px;
+    @include breakpoint(tablet) {
+        border-bottom: none;
+    }
+    @include breakpoint(desktopxl) {
+        border-top: none;
+        background-image: linear-gradient(#E6E6E6, #E6E6E6);
+        background-repeat: no-repeat;
+        background-size: calc(100% - 330px) 1px;
+        background-position: center top;
+    }
+
+
+    @include breakpoint(tablet) {
+        &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        right: -16px;
+
+        background-image:
+        url(img/oval_languages.png),
+        url(img/oval_languages.png),
+        url(img/oval_languages.png),
+        url(img/oval_languages.png),
+        url(img/oval_languages.png),
+        url(img/oval_languages.png);
+
+        background-repeat: no-repeat;
+        background-position:
+        590px 404px,
+        590px 416px,
+        590px 429px,
+        590px 441px,
+        590px 453px;
+
+        }
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+
+    @include breakpoint(desktopxl) {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 80px 165px 80px 165px;
+
+        &::before {
+            background-image:
+            url(img/ovaldxl.png),
+            url(img/ovaldxl.png),
+            url(img/ovaldxl.png),
+            url(img/ovaldxl.png),
+            url(img/ovaldxl.png);
+
+        background-position:
+        1130px 254px,
+        1130px 266px,
+        1130px 279px,
+        1130px 291px,
+        1130px 303px;
+        }
+    }
 
     &__title {
-        text-transform: uppercase;
         display:block;
         text-align: center;
         font-size: 32px;
@@ -21,6 +83,13 @@ main {
         font-weight: 700;
         line-height: 40px;
         letter-spacing: -1px;
+
+        @include breakpoint(tablet) {
+            font-size: 48px;
+            line-height: 56px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
     }
 
     &__content {
@@ -29,5 +98,11 @@ main {
         font-style: normal;
         font-weight: 500;
         line-height: 26px;
+
+        @include breakpoint(tablet) {
+            font-size: 18px;
+            line-height: 28px;
+            text-align: left;
+        }
     }
 }

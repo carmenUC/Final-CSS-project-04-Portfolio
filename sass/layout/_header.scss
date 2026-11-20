@@ -1,54 +1,180 @@
 .header {
+    position: relative;
+
+    @include breakpoint(tablet) {
+         &__logo{
+            a {
+                svg {
+                    width: 150px; 
+                }
+            }
+
+        }
+
+        &__social {
+            a {
+                svg{
+                    width: 30px;
+                }
+            }
+        }
+    }
+    @include breakpoint(desktopxl) {
+            min-height: 800px;
+            padding-left: 165px;
+            padding-right: 165px;
+            margin-bottom: 60px;
+    }
+
+    
+
     background-image: 
+    url(/img/halfoval.svg),
     url(/img/portrait.svg),
     url(/img/oval.svg),
     url(/img/oval.svg),
     url(/img/oval.svg),
     url(/img/oval.svg),
-    url(/img/oval.svg),
-    url(/img/halfoval.svg);
-
+    url(/img/oval.svg);
+    
     background-repeat: no-repeat;
 
     background-position:
+    311px 254px,
     105px 141px,
     0px 124px,
     0px 136px,
-    0px 149px,
+    00px 149px,
     0px 161px,
-    0px 1173px,
-    311px 254px;
+    0px 173px;
+    
     background-size: 
+    65px,
     174px 242px,
     180px,
     180px,
     180px,
     180px,
+    180px;
+    
+@include breakpoint(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    background-position:
+    700px 470px,
+    420px 141px,
+    0px 124px,
+    0px 136px,
+    0px 149px,
+    0px 161px,
+    0px 173px;
+    
+    background-size:
+    65px,
+    349px 486px,
     180px,
-    65px;
+    180px,
+    180px,
+    180px,
+    180px;
+}
+
+@include breakpoint(desktopxl) {
+    background-image:
+    url(/img/fulloval.svg),
+    url(/img/portrait.svg),
+    url(/img/elipsexl.png),
+    url(/img/elipsexl.png),
+    url(/img/elipsexl.png),
+    url(/img/elipsexl.png),
+    url(/img/elipsexl.png);
+   
+
+    background-position:
+    745px 510px,
+    810px 141px,
+    -40px 124px,
+    -40px 136px,
+    -40px 149px,
+    -40px 161px,
+    -40px 173px;
+
+    background-size:
+    129px 129px,
+    444px 618px,
+    530px 80px,
+    530px 80px,
+    530px 80px,
+    530px 80px,
+    530px 80px;
+}
 
     &__logo {
         margin-top: 20px;
         text-align: center;
+
+    @include breakpoint(tablet) {
+        text-align: left;
+        margin-top: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+        }   
         
+    @include breakpoint(desktopxl) {
+        margin-top: 39px;
+        }
     }
 
     &__social {
         display: flex;
         gap: 15px;
-        justify-content: center;
-        margin-top: 20px;
+        justify-content: center ;
+        margin-top: 30px;
+        margin-right: 30px;
+
+        
+        @include breakpoint(desktopxl) {
+            margin-top: 39px;
+            margin-right: 90px;
+        }
     }
 
     &__hero {
         margin: 350px 16px 40px 16px;
-        
 
+        @include breakpoint(tablet) {
+            width: 450px;
+            height: 550px;
+            margin: 125px 30px 10px 30px;
+        }
+
+        @include breakpoint(desktopxl) {
+            width: 709px;
+            height: 303px;
+            margin: -150px 30px 10px 30px;
+        }
+        
         &--title {
             font-size: 40px;
             text-align: center;
             font-weight: 700;
             margin-bottom: 24px;
+
+            @include breakpoint(tablet) {
+                font-size: 70px;
+                text-align: left;
+                margin-bottom: 60px;
+                line-height: 72px;
+            }
+
+            @include breakpoint(desktopxl) {
+                font-size: 80px;
+                line-height: 88px;
+                margin-bottom: 40px;
+            }
         }
 
         &--content {
@@ -57,11 +183,38 @@
             font-weight: 500;
             line-height: 26px;
             margin-bottom: 28px;
+
+            @include breakpoint(tablet) {
+                font-size: 18px;
+                text-align: left;
+                line-height: 30px;
+                margin-bottom: 40px;
+                width: 413px;
+            }
+
+            @include breakpoint(desktopxl) {
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 28px;
+                margin-bottom: 40px;
+            }
         }
 
         &--btn {
             @include reset-link();
             margin-bottom: 100px;
+
+            position: relative;
+            z-index: 10;
+
+            
+            @include active-link();
+
+            @include breakpoint(tablet) {
+                text-align: left;
+                margin-bottom: 0px;
+            }
 
         }
     }
@@ -71,5 +224,7 @@
         text-underline-offset: 9px;
 
     }
+
+
 }
 

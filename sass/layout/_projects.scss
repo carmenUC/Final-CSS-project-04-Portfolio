@@ -1,21 +1,101 @@
 .projects {
     padding-bottom: 30px;
+    margin-left: 16px;
+    margin-right: 16px;
+    @include breakpoint(tablet) {
+        padding: 30px 28px 30px 29px;
+    }
+
+    @include breakpoint(desktopxl) {
+        padding: 80px 165px 80px 165px;
+    }
     &__header {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 1px;
+        margin-bottom: 30px;
         margin-top: 70px;
+        align-items: center;
+        @include breakpoint(tablet) {
+            margin-bottom: 0px;
+        }
+        @include breakpoint(desktopxl) {
+            margin-bottom: 50px;
+        }
     }
+
+    &__container {
+        @include breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+
+        }
+    }
+
+    &__item {
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        figure {
+            position: relative;
+            @include breakpoint(desktopxl) {
+                &:hover .projects__image::after {
+                opacity: 0.8;
+            }
+                &:hover .projects__btn2 {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+            }
+        }
+    }
+
     &__title {
         font-size: 40px;
         font-style: normal;
         font-weight: 700;
-        line-height: 40px; /* 100% */
-        letter-spacing: -1.136px
+        letter-spacing: -1.136px;
+        
+
+        @include breakpoint(tablet) {
+            font-size: 70px;
+            line-height: 72px;
+            margin-bottom: 60px;
+        }
+
+        @include breakpoint(desktopxl) {
+            font-size: 88px;
+            line-height: 80px;
+        }
     }
 
-    &__btn {
+    &__image {
+        position: relative;
+        @include breakpoint(desktopxl) {
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-color: black;
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+    &__btn1 {
         @include reset-link();
+        @include active-link();
+        @include breakpoint(tablet) {
+            font-size: 16px;
+            margin-bottom: 60px;
+        }
+        @include breakpoint(desktopxl) {
+            align-self: center;
+        }
             
     }
 
@@ -38,18 +118,43 @@
         font-feature-settings:'liga' off,'clig' off;
     }
 
-    &__btn {
+
+    &__btn2 {
         display: flex;
         flex-direction: row;
         margin-bottom: 60px;
         gap: 20px;
+
+        @include breakpoint(desktopxl) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            aspect-ratio: 540/400;
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 0px;
+
+            z-index: 2;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+
+         
+            
+
+        }
         &--viewpr{
             @include reset-link();
+            @include active-link();
         }
         &--viewcode{
             @include reset-link();
+            @include active-link();
         }
-       
-
     }
 }
+

@@ -5,38 +5,18 @@ body {
     z-index: -1;
     position: relative;
 
-     &::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-
-        background-image: 
-            url(/img/oval.svg),
-            url(/img/oval.svg),
-            url(/img/oval.svg),
-            url(/img/oval.svg),
-            url(/img/oval.svg);
-
-        background-repeat: no-repeat;
-
-        background-position:
-            0px 1335px,
-            0px 1347px,
-            0px 1360px,
-            0px 1372px,
-            0px 138 4px;
-
-        background-size:
-            180px,
-            180px,
-            180px,
-            180px,
-            180px;
-
-        transform: scaleX(-1);
-    }   
+     
 }
 
 ul {
-    @include reset-list() 
+    @include reset-list();
+}
+
+.greenmask {
+    color: white;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $green;
+    }
 }

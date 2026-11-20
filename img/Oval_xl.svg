@@ -1,0 +1,6 @@
+<svg width="325" height="80" viewBox="0 0 325 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="stroke0_5400_2082" fill="white">
+<path d="M325 40C325 62.0914 206.355 80 60 80C-86.3555 80 -205 62.0914 -205 40C-205 17.9086 -86.3555 0 60 0C206.355 0 325 17.9086 325 40Z"/>
+</mask>
+<ellipse cx="60" cy="40" rx="265" ry="40" stroke-width="2" stroke="white" mask="url(#stroke0_5400_2082)"/>
+</svg>

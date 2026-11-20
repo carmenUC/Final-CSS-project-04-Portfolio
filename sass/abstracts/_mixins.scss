@@ -63,3 +63,10 @@
   text-underline-offset: 15px;
   cursor: pointer;
 }
+
+@mixin active-link() {
+  &:hover {
+  color: $green;
+  cursor: pointer;
+  }
+}
